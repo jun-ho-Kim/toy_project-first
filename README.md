@@ -1,2 +1,2 @@
-# toy_project-first-
+# toy_project-first
 My first toy Project
