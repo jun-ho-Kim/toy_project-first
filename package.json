@@ -1,0 +1,30 @@
+{
+  "name": "first_toyproject",
+  "version": "1.0.0",
+  "description": "my first toyProject",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jun-ho-Kim/toy_project-first.git"
+  },
+  "author": "jun-ho-Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jun-ho-Kim/toy_project-first/issues"
+  },
+  "homepage": "https://github.com/jun-ho-Kim/toy_project-first#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/helper-define-map": "^7.8.3",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6"
+  }
+}
