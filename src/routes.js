@@ -4,7 +4,7 @@ const LOGOUT = "/logout";
 const JOIN = "/join";
 const TODO = "/todo";
 const TIMER = "/timer";
-
+const RANK = "/rank"
 
 //user
 const USER = "/user";
@@ -14,7 +14,7 @@ const CHANGE_PASSWORD = "/change-password";
 
 //secret_diary
 const SECRET_DIARY = "/secret-diary";
-
+const WRITE_DIARY = "/write-diary";
 
 
 const router = {
@@ -31,7 +31,9 @@ const router = {
     editProfile : EDIT_PROFIlE,
     changePassword : CHANGE_PASSWORD,
 
-    secret_diary : SECRET_DIARY
+    secret_diary : SECRET_DIARY,
+    wirte_diary: WRITE_DIARY,
+    rank : RANK
 } 
 
 export default router;

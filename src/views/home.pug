@@ -1,40 +1,15 @@
-<!DOCTYPE html>
-html(lang="ko")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title home
-    body
-        h3 비밀의 화원
-        h3 이번 주 목표 : 토이프로젝트
-        ul
-            li 
-                a(href="/login") LOGIN
-            li 
-                a(href="/join") 회원가입
-        div
-            img(src="#", alt="월별 비밀의 화원")
+extends layout/main
 
-        div
-            img(src="#", alt="주식창")
-            
-        후에     
-        div#오른쪽탭
-            h3 
-                a(href="/") home
-            h3
-                a(href="/todo") 투두리스트 관리
-            h3 
-                a(href="/timer") 공부의 시간(타이머)
-            h3 
-                a(href="secretDiary") 비밀일기
-            h3
-                a(href="rank") 화원랭크(공유플랫폼)
-        div
-            ul 오늘 할일들
-                li 토이프로젝트 틀 만들기
-                li 
-                li
-                li
+block content
+    div
+        img(src="#", alt="월별 비밀의 화원")
+
+    div
+        img(src="#", alt="주식창")        
+    div
+        ul 오늘 할일들
+            li 토이프로젝트 틀 만들기
+            li 
+            li
+            li
         

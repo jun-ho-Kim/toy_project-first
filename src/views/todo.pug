@@ -1,0 +1,9 @@
+extends layout/main
+
+block content
+    h1 todo
+    form(action="/todo", method="post")
+     input(type="text", name="todolist" placeholder="")
+     input(type="submit", value="제출")
+
+     h3 todo Board

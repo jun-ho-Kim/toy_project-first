@@ -1,15 +1,20 @@
 import express from "express";
-
+import db from "./db"
+import bodyParser from "body-parser"
 // const express = require("express");
 import {join} from "path";
 import globalRouter from "./routers/globalRouter";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
-
+const PORT = process.env.PORT || 4000
 
 app.set("view engine", "pug");
 app.set("views", join(__dirname, "views"));
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+ 
 
 
 function handleListen() {
@@ -17,8 +22,4 @@ function handleListen() {
 }
 
 app.use("/", globalRouter);
-app.get("/todo", (req, res) => res.send("todo"));
-app.get("/timer", (req, res) => res.send("timer"));
-app.get("/secretDiary", (req, res) => res.send("secret Diary"))
-app.get("/rank", (req, res) => res.send("rank"))
-app.listen(4000, handleListen);
+app.listen(PORT, handleListen);
