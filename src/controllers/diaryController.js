@@ -8,7 +8,7 @@ export const secretDiary = async(req, res) => {
     res.render("secretDiary", {diary});
 }   catch (error) {
     console.log(error);
-    res.redirect("/");
+    res.render("secretDiary", {diary : []});
 }
 }
 
@@ -20,6 +20,12 @@ export const postWrite = async(req,res) => {
     const {
         body : {diaryTitle, diaryContent}
     } = req;
-    console.log("post Write : ", diaryTitle, diaryContent);
+    const newDiary = await Diary.create({
+        title : diaryTitle,
+        content: diaryContent
+    })
+    console.log("newDiary.id:", newDiary.id);
+    res.redirect(routes.diaryId(newDiary.id))
+
 }
     // const newvideo = await Diary.create({})

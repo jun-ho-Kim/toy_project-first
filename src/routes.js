@@ -14,10 +14,11 @@ const CHANGE_PASSWORD = "/change-password";
 
 //secret_diary
 const SECRET_DIARY = "/secret-diary";
+const DIARY_ID = "/:id"
 const WRITE_DIARY = "/write-diary";
 
 
-const router = {
+const routes = {
     home : HOME,
     login : LOGIN,
     logout : LOGOUT,
@@ -33,7 +34,14 @@ const router = {
 
     secret_diary : SECRET_DIARY,
     wirte_diary: WRITE_DIARY,
+    diaryId : id => {
+        if(id) {
+            return `/secret-diary/${id}`;
+        } else {
+            return DIARY_ID;
+        }
+    },
     rank : RANK
 } 
 
-export default router;
+export default routes;
