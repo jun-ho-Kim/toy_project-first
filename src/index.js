@@ -5,6 +5,8 @@ import bodyParser from "body-parser"
 import {join} from "path";
 import globalRouter from "./routers/globalRouter";
 import dotenv from "dotenv";
+import routes from "./routes";
+import diaryRouter from "./routers/diaryRouter";
 dotenv.config();
 
 const app = express();
@@ -22,4 +24,5 @@ function handleListen() {
 }
 
 app.use("/", globalRouter);
+app.use("/secret-diary/me", diaryRouter);
 app.listen(PORT, handleListen);

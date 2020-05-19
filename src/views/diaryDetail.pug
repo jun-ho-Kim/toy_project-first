@@ -1,0 +1,7 @@
+extends layout/main
+
+block content
+    h2=diary.title
+    h3=diary.content
+    a(href=`/secret-diary/me/${diary.id}/delete`) delete
+    a(href=`/secret-diary/me/${diary.id}/edit`) edit

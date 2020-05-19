@@ -13,8 +13,9 @@ const EDIT_PROFIlE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
 //secret_diary
-const SECRET_DIARY = "/secret-diary";
-const DIARY_ID = "/:id"
+const SECRET_DIARY = "/secret-diary/me";
+const DIARY_DETAIL = "/:id"
+const EDIT_DIARY = "/:id/edit"
 const WRITE_DIARY = "/write-diary";
 
 
@@ -31,14 +32,21 @@ const routes = {
     userDetail : USER_DETAIL,
     editProfile : EDIT_PROFIlE,
     changePassword : CHANGE_PASSWORD,
-
-    secret_diary : SECRET_DIARY,
     wirte_diary: WRITE_DIARY,
-    diaryId : id => {
+    secret_diary : SECRET_DIARY,
+
+    diaryDetail : id => {
         if(id) {
-            return `/secret-diary/${id}`;
+            return `/${id}`;
         } else {
-            return DIARY_ID;
+            return DIARY_DETAIL;
+        }
+    },
+    editDiary : id => {
+        if(id) {
+            return `/${id}/edit`;
+        } else {
+            return EDIT_DIARY;
         }
     },
     rank : RANK

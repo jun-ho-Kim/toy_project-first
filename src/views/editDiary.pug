@@ -1,0 +1,7 @@
+extends layout/main
+
+block content
+    form(action=`/secret-diary/me/${diary.id}/edit`, method="post")
+        input(type="text", name="diaryTitle", value=diary.title)
+        textarea(name="diaryContent", cols="30", rows="10")=diary.content
+        input(type="submit" value="수정")
