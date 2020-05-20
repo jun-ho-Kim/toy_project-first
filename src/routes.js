@@ -16,6 +16,7 @@ const CHANGE_PASSWORD = "/change-password";
 const SECRET_DIARY = "/secret-diary/me";
 const DIARY_DETAIL = "/:id"
 const EDIT_DIARY = "/:id/edit"
+const DELETE_DIARY = "/:id/delete"
 const WRITE_DIARY = "/write-diary";
 
 
@@ -47,6 +48,13 @@ const routes = {
             return `/${id}/edit`;
         } else {
             return EDIT_DIARY;
+        }
+    },
+    deleteDiary : id => {
+        if(id) {
+            return `/${id}/delete`
+        } else {
+            return DELETE_DIARY
         }
     },
     rank : RANK

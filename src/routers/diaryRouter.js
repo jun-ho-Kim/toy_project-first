@@ -1,6 +1,6 @@
 import express from "express";
 import routes from "../routes";
-import { secretDiary, diaryDetail, postEditDiary, getEditDiary } from "../controllers/diaryController";
+import { secretDiary, diaryDetail, postEditDiary, getEditDiary, deleteDiary } from "../controllers/diaryController";
 
 const diaryRouter = express.Router();
 
@@ -8,4 +8,5 @@ const diaryRouter = express.Router();
 diaryRouter.get(routes.diaryDetail(), diaryDetail);
 diaryRouter.get(routes.editDiary(), getEditDiary);
 diaryRouter.post(routes.editDiary(), postEditDiary);
+diaryRouter.get(routes.deleteDiary(), deleteDiary);
 export default diaryRouter;

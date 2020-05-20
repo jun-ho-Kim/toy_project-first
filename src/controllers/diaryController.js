@@ -53,14 +53,14 @@ export const getEditDiary = async (req, res) => {
 
 export const postEditDiary = async (req, res) => {
     const {
-        body : {diaryTitle : title , diaryContent : content},
+        body : {diaryTitle, diaryContent},
         params : {id}
     } = req;
     // console.log("editDiary: title", title);
     // console.log("editDiary: diaryTitle", diaryTitle);
     // console.log("editDiary: diaryContent", diaryContent);
     try {
-        await Diary.findOneAndUpdate({id}, {title, content});
+        await Diary.findOneAndUpdate({_id:id}, {title: diaryTitle, content:diaryContent});
         res.redirect(`/secret-diary/me/${id}`);
     } catch (error) {
         console.log(error);
@@ -68,3 +68,16 @@ export const postEditDiary = async (req, res) => {
     }
 }
     // const newvideo = await Diary.create({})
+
+export const deleteDiary = async (req, res) => {
+    const {
+        params : {id}
+    } = req
+    try {
+        await Diary.findOneAndRemove({_id:id});
+        res.redirect(routes.secretDiary);
+    } catch(error) {
+        console.log(error);
+        res.redirect("/");
+    }
+}
