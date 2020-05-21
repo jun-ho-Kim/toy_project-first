@@ -7,6 +7,7 @@ import globalRouter from "./routers/globalRouter";
 import dotenv from "dotenv";
 import routes from "./routes";
 import diaryRouter from "./routers/diaryRouter";
+import todoRouter from "./routers/todoRouter";
 dotenv.config();
 
 const app = express();
@@ -25,4 +26,5 @@ function handleListen() {
 
 app.use("/", globalRouter);
 app.use("/secret-diary/me", diaryRouter);
+app.use("/todo", todoRouter);
 app.listen(PORT, handleListen);

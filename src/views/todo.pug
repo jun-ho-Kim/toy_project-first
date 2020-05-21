@@ -2,8 +2,19 @@ extends layout/main
 
 block content
     h1 todo
-    form(action="/todo", method="post")
-     input(type="text", name="todolist" placeholder="")
-     input(type="submit", value="제출")
+    form(action="/todo", method="post").js-todoForm.Form
+        input(type="text", name="todoTitle" placeholder="")
+        textarea(name="todoDetail", cols="30", rows="10")
+        input(type="time", name="todoDuedate")
+        input(type="submit", value="할 일 등록")
+    .pending__board
+        li.js-pendingList=todoList.todoTitle
+    .finished__board
+        h3.finishedList Finished
+    
+    h3 이번주 목표 변경
+    form(action="#", method="post")
+        input(type="text", name="weeksGoalRenewal", value="#")
+        input(type="submit", value="이번주 목표 수정")
 
-     h3 todo Board
+    //- script(src="../JStodo/todo.js")

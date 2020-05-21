@@ -2,7 +2,6 @@ const HOME = "/";
 const LOGIN = "/login";
 const LOGOUT = "/logout";
 const JOIN = "/join";
-const TODO = "/todo";
 const TIMER = "/timer";
 const RANK = "/rank"
 
@@ -16,9 +15,12 @@ const CHANGE_PASSWORD = "/change-password";
 const SECRET_DIARY = "/secret-diary/me";
 const DIARY_DETAIL = "/:id"
 const EDIT_DIARY = "/:id/edit"
-const DELETE_DIARY = "/:id/delete"
+const DELETE_DIARY = "/:id/delp;./.['----------------------]==['ete"
 const WRITE_DIARY = "/write-diary";
 
+//todo
+const TODO = "/todo";
+const TODO_DETAIL = "/:id"
 
 const routes = {
     home : HOME,

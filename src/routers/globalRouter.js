@@ -1,7 +1,7 @@
 import express from "express";
 import routes from "../routes";
 import { getWrite, postWrite, secretDiary } from "../controllers/diaryController";
-import { upoladDiary } from "../middleware";
+import { createTodo, getAllTodos } from "../controllers/todoController";
 
 
 const globalRouter = express.Router();
@@ -11,7 +11,10 @@ globalRouter.get(routes.login, (req, res) => res.render("login"));
 globalRouter.get(routes.logout);
 globalRouter.get(routes.join, (req,res) => res.send("회원가입"));
 
-globalRouter.get(routes.todo, (req, res) => res.render("todo"));
+// globalRouter.get(routes.todo, (req, res) => res.render("todo"));
+globalRouter.get(routes.todo,getAllTodos);
+globalRouter.post(routes.todo, createTodo);
+
 globalRouter.get(routes.timer, (req, res) => res.render("timer"));
 globalRouter.get(routes.secret_diary, secretDiary);
 globalRouter.get(routes.wirte_diary, getWrite);

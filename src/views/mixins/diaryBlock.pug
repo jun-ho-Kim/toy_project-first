@@ -2,3 +2,4 @@ mixin diaryBlock(diary = {})
     a(href=`/secret-diary/me/${diary.id}`)
         h3=diary.title
     h5=diary.content
+    h6=diary.createAt
