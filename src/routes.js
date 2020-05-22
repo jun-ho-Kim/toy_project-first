@@ -20,7 +20,9 @@ const WRITE_DIARY = "/write-diary";
 
 //todo
 const TODO = "/todo";
-const TODO_DETAIL = "/:id"
+const TODO_DETAIL = "/:id";
+const EDIT_TODO = "/:id/edit";
+const DELETE_TODO = "/:id/delete";
 
 const routes = {
     home : HOME,
@@ -29,6 +31,20 @@ const routes = {
     join : JOIN,
 
     todo : TODO,
+    editTodo : id => {
+        if(id) {
+            return `/${id}/edit`;
+        } else {
+            return EDIT_TODO;
+        }
+    },
+    deleteTodo : id => {
+        if(id) {
+            return `/${id}/delete`;
+        } else {
+            return DELETE_TODO;
+        }
+    },
     timer : TIMER,
     
     user : USER,

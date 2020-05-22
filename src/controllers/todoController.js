@@ -1,5 +1,6 @@
 import routes from "../routes";
 import Todo from "../models/Todo";
+// import delBtn from "../todo_module/deleteTodo"
 
 export const getAllTodos = async(req,res) => {
     //ascny ~ await를 사용하지 않으면 find() 함수는 늦게 작동되 데이터를 todoList라는 변수에 담을 수 없다.
@@ -27,6 +28,7 @@ export const createTodo = async (req, res) => {
             todoTitle,
             todoDetail
         })
+        console.log("newTodo: ", newTodo);
 
     } catch(err) {
         console.log(error);
@@ -36,4 +38,20 @@ export const createTodo = async (req, res) => {
     }
     console.log("todo : ", todo);
     // todo.save();
+};
+
+export const getEditTodo = async (req, res) => {
+    //이제 CSS하기
+    //CSS 먼저 하는 이유
+    //ㄴ 더 이상 코드가 복잡지고 나중에 CSS를 하면 복잡해질까봐
+    //ㄴ Todo를 수정 할 때 /edit 페이지에서 수정한는 것이 아닌
+    //   /Todo 에서 직접 수정하는것(ex/ pop창, SHOW CLASS 적용해서 rendering 안하고 수정)
+}
+
+export const deleteTodo = async (req, res) => {
+    const {
+        params : {id}
+    } = req;
+    await Todo.findByIdAndDelete({_id:id});
+    res.redirect("/")
 }

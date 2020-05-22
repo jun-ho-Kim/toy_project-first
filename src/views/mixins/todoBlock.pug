@@ -1,0 +1,21 @@
+mixin todoBlock(todoList={})
+    h3.tidoTItle=todoList.title
+    h5.todoDetail=todoList.detail
+        form(action=`/todo/${todoList.id}/delete`, method="post")
+            input(type="submit", value="❌")
+        form(action=`/todo/${todoList.id}/edit`, method="post")
+            input(type="submit", value="✏")
+        form(action=`/todo/${todoList.id}/finished`, method="post")
+            input(type="submit", value="✅")
+
+    //- script(type="text/script" src="deleteTodo.js")
+    //- script(type="text/script")
+    //-     const delBtn = document.getElementById("js-deleteButton");
+
+    //-     function handleDelBtn (event) {
+    //-         console.log("1")
+    //-     }
+    //-     if(delBtn) {
+    //-         delBtn.addEventListener("click", handleDelBtn);
+    //-     }
+    //- script(type="text/script" src="../todo_module/deleteTodo.js")
