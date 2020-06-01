@@ -1,0 +1,34 @@
+.sidebar {
+    // display: flex;
+    // justify-content: flex-end;
+    // align-content: flex-start;
+    position : absolute;
+    top:95.556px;
+    right: 0;
+    height: 80%;
+    // padding: 100px, 0px;
+}
+
+.sidebar__column {
+    background-color: $heliot-rope;
+}
+
+.sidebar__column h3 {
+    // margin:15px 0;
+    padding: 35px 0;
+    // border-style : inset;
+    text-align: center;
+}
+
+.sidebar__column h3 a {
+    color: $city-rigt;
+}
+
+.sidebar_list:hover {
+    border-style : inset;
+    background-color: $soulr-remon;
+    color: black;
+    border : 3px solid red;
+    color: black;
+}
+

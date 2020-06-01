@@ -1,3 +1,9 @@
-body {
-    background-color: red;
-  }
+@import "config/reset.scss";
+@import "config/_variables.scss";
+@import "main.scss";
+@import "header.scss";
+@import "sidebar.scss";
+// body {
+//     background-color: red;
+//     color: yellow;
+//   }

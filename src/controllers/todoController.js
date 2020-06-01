@@ -1,5 +1,6 @@
 import routes from "../routes";
 import Todo from "../models/Todo";
+import Goal from "../models/ThisWeeksGoal";
 // import delBtn from "../todo_module/deleteTodo"
 
 export const getAllTodos = async(req,res) => {
@@ -31,7 +32,7 @@ export const createTodo = async (req, res) => {
         console.log("newTodo: ", newTodo);
 
     } catch(err) {
-        console.log(error);
+        console.log(err);
     }
     finally {
         res.redirect("/todo");
@@ -54,4 +55,40 @@ export const deleteTodo = async (req, res) => {
     } = req;
     await Todo.findByIdAndDelete({_id:id});
     res.redirect("/")
+}
+    // let data = await getWeeksGoal(weeksGoalRenewal)
+    // res.render("todo");
+    // console.log("get data : ", data);
+// }
+
+export const getWeeksGoals = async(req, res) => {
+    res.render("todo");
+}
+
+export const postWeeksGoals = async(req, res) => {
+    const {
+        body : {goalTitle}
+    } =req;
+    try{
+        console.log("weeksGoal : ", goalTitle)
+        const goal = await Goal.create({
+            goalTitle
+        });  
+        console.log(goal)
+    } catch (error){
+        console.log(error);
+        res.status(400);
+    } finally {
+        res.redirect(`/todo`);
+    }
+    
+    // let data = await getWeeksGoal(weeksGoalRenewal)
+    // console.log("data : ", data)
+    // const weeksGoalScreen = document.querySelectorAll(".js-goalScreen");
+    // weeksGoalArray = Array.prototype.slice.call(weeksGoalScreen);
+    // const {
+        // body : {weeksGoalRenewal : editGoal}
+    // } = req;
+    // weeksGoalArray.innerHTML = editGoal;
+
 }

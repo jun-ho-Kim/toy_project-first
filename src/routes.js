@@ -23,6 +23,7 @@ const TODO = "/todo";
 const TODO_DETAIL = "/:id";
 const EDIT_TODO = "/:id/edit";
 const DELETE_TODO = "/:id/delete";
+const THIS_WEEKS_GOALS = "/weeks-goals";
 
 const routes = {
     home : HOME,
@@ -45,6 +46,7 @@ const routes = {
             return DELETE_TODO;
         }
     },
+    thisWeeksGoals : THIS_WEEKS_GOALS,
     timer : TIMER,
     
     user : USER,

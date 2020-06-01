@@ -20,11 +20,18 @@ block content
                 title : item.todoTitle,
                 detail : item.todoDetail
             })
-    h3 이번주 목표 변경
-    form(action="#", method="post")
-        input(type="text", name="weeksGoalRenewal", value="#")
-        input(type="submit", value="이번주 목표 수정")
-    
+    .todo__thisWeeksGoal
+        h3 이번주 목표 변경
+        h6.js-goalScreen 거북이 달린다
+            button.js-goalEditBtn ✏
+        
+            
+        form(method="POST")#js-goalForm
+            input(type="text", name="goalTitle").js-goalInput
+            //- input(type="text", name="weeksGoalDetail").js-goalInput
+            //- input(type="submit", value="수정")
+            input(type="submit", value="enter")
+    //- script(src=".././assets/js/goals")
     //- <script>
     //-     const delBtn = document.getElementById("js-deleteButton");
 
